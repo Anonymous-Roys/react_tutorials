@@ -7,3 +7,4 @@ function functionalComp() {
 
 
 export default functionalComp;
+
