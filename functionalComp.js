@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function functionalComp() {
+
+function FunctionalComp() {
     return <p>This is a Functional Component</p>
 }
 
 
-export default functionalComp;
+
+export default FunctionalComp;
 

@@ -91,8 +91,8 @@ console.log(add);
 
 
 
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
+// const container = document.getElementById('root');
+// const root = ReactDOM.createRoot(container);
 
 
 // root.render(add)
@@ -125,3 +125,25 @@ if (x = 10) {
 const ifStatement = <h1>{text}</h1>
 
 const ternaryStatement = <h1>{x < 10 ? "Hello" : "bye"}</h1>
+
+
+
+// ------Props------
+function Car(props) {
+  return <h2>I am a {props.color} Car!</h2>;
+}
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Car color="red" />);
+
+
+// components in components
+
+function Garage(){
+  return (
+    <>
+      <h3>Here is where a car parks</h3>
+      <Car/>
+    </>
+  )
+}
