@@ -36,4 +36,31 @@ export class ClassComp2 extends React.Component {
     }
 }
 
+///lifecycle of components
+export class ClassComp3 extends React.Component { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            fcolor: "red"
+        }
+    }
+    
+    // static getDerivedStateFromProps(props, state) { 
+    //     return ({ fcolor :props.color })
+    // }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({fcolor: "violet"});
+        },1000)
+    }
+    render() {
+        return (
+            <>
+                <p>I have a {this.state.fcolor} car</p>
+            </>
+        )
+    }
+}
+
 
