@@ -106,3 +106,37 @@ export class ClassComp4 extends React.Component{
     }
 
 }
+
+
+//Updating
+export class ClassComp5 extends React.Component{
+    constructor(props) { 
+        super(props);
+        this.state = { favoritecolor: "black" };
+    }
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ favoritecolor: "black" });
+        },1000)
+    }
+    //getSnapshotBeforeUpdate
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        document.getElementById("div1").innerHTML =
+        "Before the update, the favorite was " + prevState.favoritecolor;
+    }
+
+    componentDidUpdate() {
+        document.getElementById("div2").innerHTML =
+        "The updated favorite is " + this.state.favoritecolor;
+    }
+
+    render() {
+        return (
+            <>
+                <h1>My favourite color is {this.state.favoritecolor}</h1>
+                <div id="div1"></div>
+                <div id="div2"></div>
+            </>
+        )
+    }
+}
