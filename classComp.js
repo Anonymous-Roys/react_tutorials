@@ -14,5 +14,26 @@ export class ClassComp1 extends React.Component{
     }
 }
 
+// using constructor method
+export class ClassComp2 extends React.Component { 
+    constructor() {
+        super();
+        this.state = {
+            color: "red",
+            brand: 'Toyota'
+        }
+    }
+    changeColor = () =>{ 
+        this.setState({ color: 'blue' })
+    }
+    render() {
+        return (
+            <>
+                <p>I have a <b>{this.state.color}</b> {this.state.brand} car</p>
+                <button onClick={this.changeColor}>Click to change Color</button>
+            </>
+        )
+    }
+}
 
 
