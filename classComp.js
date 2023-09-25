@@ -116,7 +116,7 @@ export class ClassComp5 extends React.Component{
     }
     componentDidMount() {
         setTimeout(() => {
-            this.setState({ favoritecolor: "black" });
+            this.setState({ favoritecolor: "red" });
         },1000)
     }
     //getSnapshotBeforeUpdate
@@ -125,6 +125,7 @@ export class ClassComp5 extends React.Component{
         "Before the update, the favorite was " + prevState.favoritecolor;
     }
 
+    //componentDidUpdate
     componentDidUpdate() {
         document.getElementById("div2").innerHTML =
         "The updated favorite is " + this.state.favoritecolor;
@@ -136,6 +137,46 @@ export class ClassComp5 extends React.Component{
                 <h1>My favourite color is {this.state.favoritecolor}</h1>
                 <div id="div1"></div>
                 <div id="div2"></div>
+            </>
+        )
+    }
+}
+
+
+//Unmounting
+export class ClassComp6 extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = { show: true}
+    }
+    delHeader = () => {
+        this.setState({ show: false });
+
+    }
+
+    render() {
+        let myheader;
+        if (this.state.show) {
+            myheader = <Child />;
+        };
+        return (
+            <>
+                {myheader}
+                <button onClick={this.delHeader}>Delete Header</button>
+            </>
+        );
+    }
+}
+
+class Child extends React.Component{
+    componentWillUnmount() {
+        alert("The component named Header is about to be unmounted.");
+        
+    }
+    render() {
+        return (
+            <>
+                <h2>Hello world</h2>
             </>
         )
     }
