@@ -12,6 +12,9 @@ function FunctionalComp1(props) {
 function shoot() { 
         alert('Great shot');
 }
+function shoot1(a) { 
+        alert(a);
+}
 
 function FunctionalComp() {
     const color = "red";
@@ -24,6 +27,7 @@ function FunctionalComp() {
             <p>This is a Functional Component</p>
             <FunctionalComp1 brand="Mustang" color={color} name={carInfo} />
             <button onClick={shoot}>Shoot</button>
+            <button onClick={() => shoot1("Goal")}>Shoot With Parameter</button>
         </div>
     )
 }
