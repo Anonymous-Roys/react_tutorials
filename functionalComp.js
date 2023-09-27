@@ -2,6 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 
+
+function FunctionalComp1(props) {
+    
+    return (
+        <p>It is a { props.color } { props.brand } { props.name.type }</p>
+    )
+}
+function shoot() { 
+        alert('Great shot');
+}
+
 function FunctionalComp() {
     const color = "red";
     const carInfo = {
@@ -11,17 +22,13 @@ function FunctionalComp() {
     return (
         <div align = "center">
             <p>This is a Functional Component</p>
-            <FunctionalComp1 brand="Mustang" color={color} name={ carInfo } />
+            <FunctionalComp1 brand="Mustang" color={color} name={carInfo} />
+            <button onClick={shoot}>Shoot</button>
         </div>
     )
 }
 
-function FunctionalComp1(props) {
-    
-    return (
-        <p>It is a { props.color } { props.brand } { props.name.type }</p>
-    )
-}
+
 
 export default FunctionalComp;
 
