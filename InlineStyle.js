@@ -10,4 +10,3 @@ export class InlineStyle extends Component {
   }
 }
 
-export default InlineStyle
