@@ -16,11 +16,11 @@ export class Counter extends Component {
     }
     render() {
       const {count} = this.state
-    return (
+      return (
         <div>
-            <button onMouseEnter=  {this.increaseFunc}>Hover to increase ({ count }) {this.props.name}</button>
-      </div>
-    )
+          <button onMouseEnter={this.increaseFunc}>Hover to increase ({count}) {this.props.name}</button>
+        </div>
+      );
   }
 }
 
